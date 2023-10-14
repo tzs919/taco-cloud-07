@@ -2,7 +2,6 @@ package tacos.data.service;
 
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
-
 import tacos.data.OrderRepository;
 
 @Service
@@ -15,6 +14,7 @@ public class OrderAdminService {
   }
 
   @PreAuthorize("hasRole('ADMIN')")
+//  @PreAuthorize("hasRole('USER')")
   public void deleteAllOrders() {
     orderRepository.deleteAll();
   }

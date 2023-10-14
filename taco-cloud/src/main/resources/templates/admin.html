@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Delete Orders</title>
+  </head>
+  
+  <body>
+    <h1>Delete Orders...</h1>
+    <form method="POST" th:action="@{/admin/deleteOrders}">
+      <input type="submit" value="deleteOrders"/>
+    </form>
+  </body>
+</html>
