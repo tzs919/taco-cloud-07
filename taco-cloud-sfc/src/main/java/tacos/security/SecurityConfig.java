@@ -26,7 +26,15 @@ public class SecurityConfig {
   public PasswordEncoder passwordEncoder() {
     return new BCryptPasswordEncoder();
   }
-  
+
+//  @Bean
+//  public UserDetailsService userDetailsService(PasswordEncoder encoder) {
+//    List<UserDetails> usersList = new ArrayList<>();
+//    usersList.add(new User("buzz",encoder.encode("infinity"),Arrays.asList(new SimpleGrantedAuthority("ROLE_USER"))));
+//    usersList.add(new User("woody",encoder.encode("bullseye"),Arrays.asList(new SimpleGrantedAuthority("ROLE_USER"))));
+//    return new InMemoryUserDetailsManager(usersList);
+//  }
+
   @Bean
   public UserDetailsService userDetailsService(UserRepository userRepo) {
     return username -> {
